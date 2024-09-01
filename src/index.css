@@ -1,13 +1,77 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.calculator {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.display {
+  background: #333;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 1.8em;
+  overflow: hidden;
+  height: 60px; /* Fix height */
+  display: flex;
+  align-items: center; /* Center the text vertically */
+  justify-content: flex-end; /* Align text to the right */
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 1.2em;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+  background: #e0e0e0;
+}
+
+.button:active {
+  background: #ccc;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.button.operator {
+  background: #ff9500;
+  color: white;
+}
+
+.button.operator:hover {
+  background: #e68a00;
+}
+
+.button.operator:active {
+  background: #cc7a00;
+}
+
+.button.zero {
+  grid-column: span 2;
 }
